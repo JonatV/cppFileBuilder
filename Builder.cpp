@@ -74,13 +74,13 @@ void	Builder::create_header()
 		f << "	// Parameterized constructor\n";
 		f << "		\n";
 		f << "	// Copy constructor\n";
-		f << "		" << this->get_class_name() << "(" << this->get_class_name() << " const &);\n";
+		f << "		" << this->get_class_name() << "(const " << this->get_class_name() << " &);\n";
 		f << "		\n";
 		f << "	// Destructor\n";
 		f << "		~" << this->get_class_name() << "();\n";
 		f << "		\n";
 		f << "	// Overloads\n";
-		f << "		" << this->get_class_name() << "	&operator=(" << this->get_class_name() << " const &);\n";
+		f << "		" << this->get_class_name() << "	&operator=(const " << this->get_class_name() << " &);\n";
 		f << "		\n";
 		f << "	// Member functions\n";
 		f << "		\n";
@@ -117,7 +117,7 @@ void	Builder::create_cpp()
 		f << "// 	std::cout << \"\\e[2mParameterized constructor " << this->get_class_name() << " called\\e[0m\" << std::endl;\n";
 		f << "// }\n\n";
 		f << "// Copy constructor\n";
-		f << this->get_class_name() << "::" << this->get_class_name() << "(" << this->get_class_name() << " const &)\n";
+		f << this->get_class_name() << "::" << this->get_class_name() << "(const " << this->get_class_name() << " &other)\n";
 		f << "{\n";
 		f << "	std::cout << \"\\e[2mCopy constructor " << this->get_class_name() << " called\\e[0m\" << std::endl;\n";
 		f << "}\n\n";
@@ -127,7 +127,7 @@ void	Builder::create_cpp()
 		f << "	std::cout << \"\\e[2mDestructor " << this->get_class_name() << " called\\e[0m\" << std::endl;\n";
 		f << "}\n\n";
 		f << "// Overloads\n";
-		f << this->get_class_name() << "	&" << this->get_class_name() << "::operator=(" << this->get_class_name() << " const &)\n";
+		f << this->get_class_name() << "	&" << this->get_class_name() << "::operator=(const " << this->get_class_name() << " &other)\n";
 		f << "{\n";
 		f << "	std::cout << \"\\e[2mAssignation operator " << this->get_class_name() << " called\\e[0m\" << std::endl;\n";
 		f << "	return (*this);\n";
