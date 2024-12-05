@@ -50,7 +50,7 @@ This will generate the following files:
     ```
 4. Move to a Directory register in PATH (i.e):
     ```shell
-    mv cppFileBuilder /usr/bin/
+    sudo mv cppFileBuilder /usr/bin/
     ```
 5. And now it is accessible everywhere
     ```shell
